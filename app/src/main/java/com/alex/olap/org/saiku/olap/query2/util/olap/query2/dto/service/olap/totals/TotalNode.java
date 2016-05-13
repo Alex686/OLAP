@@ -26,7 +26,8 @@ public class TotalNode {
       if ( aggregatorTemplate != null ) {
         for ( int i = 0; i < totals.length; i++ ) {
           for ( int j = 0; j < totals[ 0 ].length; j++ ) {
-            totals[ i ][ j ] = aggregatorTemplate.newInstance( formatList.getValueFormat( j, i ), measures[ i ] );
+            //totals[ i ][ j ] = aggregatorTemplate.newInstance( formatList.getValueFormat( j, i ), measures[ i ] );
+            // TODO: 13.05.2016  надо обратить внимание на это
           }
         }
       }

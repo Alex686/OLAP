@@ -1,10 +1,10 @@
 package com.alex.olap.org.saiku.olap.query2.util.olap.query2.dto.service.olap.totals.aggregators;
 
-import org.olap4j.metadata.Measure;
-import mondrian.util.Format;
+//import mondrian.util.Format;
 
-public class MinAggregator extends TotalAggregator {
-
+public class MinAggregator// extends TotalAggregator
+ {
+/*
   MinAggregator(Format format) {
     super( format );
   }
@@ -29,5 +29,5 @@ public class MinAggregator extends TotalAggregator {
   public TotalAggregator newInstance( Format format, Measure measure ) {
     return new MinAggregator( format );
   }
-
+*/
 }

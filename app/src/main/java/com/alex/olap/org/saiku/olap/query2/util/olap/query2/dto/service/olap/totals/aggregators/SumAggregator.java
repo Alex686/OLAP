@@ -1,9 +1,11 @@
 package com.alex.olap.org.saiku.olap.query2.util.olap.query2.dto.service.olap.totals.aggregators;
 
-import org.olap4j.metadata.Measure;
-import mondrian.util.Format;
-public class SumAggregator extends TotalAggregator {
-
+//import mondrian.util.Format;
+public class SumAggregator //extends TotalAggregator
+ {
+   public SumAggregator(Object o) {
+   }
+/*
   SumAggregator(Format format) {
     super( format );
   }
@@ -28,5 +30,5 @@ public class SumAggregator extends TotalAggregator {
   public TotalAggregator newInstance( Format format, Measure measure ) {
     return new SumAggregator( format );
   }
-
+*/
 }

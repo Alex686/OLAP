@@ -1,33 +1,34 @@
 package com.alex.olap.org.saiku.olap.query2.util.olap.query2.dto.service.olap.totals.aggregators;
 
-import com.alex.olap.org.saiku.olap.query2.util.olap.query2.dto.olap.util.exception.SaikuProperties;
-
 import org.olap4j.Cell;
 import org.olap4j.metadata.Measure;
-import mondrian.util.Format;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+
+//import mondrian.util.Format;
 
 public abstract class TotalAggregator {
   private static final Map<String, TotalAggregator> all;
 
   static {
     Map<String, TotalAggregator> tmp = new HashMap<>();
-    tmp.put( "sum", new SumAggregator( null ) );
-    tmp.put( "max", new MaxAggregator( null ) );
-    tmp.put( "min", new MinAggregator( null ) );
-    tmp.put( "avg", new AvgAggregator( null ) );
+    //tmp.put( "sum", new SumAggregator( null ) );
+    //tmp.put( "max", new MaxAggregator( null ) );
+    //tmp.put( "min", new MinAggregator( null ) );
+    //tmp.put( "avg", new AvgAggregator( null ) );
     all = Collections.unmodifiableMap( tmp );
   }
 
   private String formattedValue;
+ /*
   final Format format;
 
   TotalAggregator(Format format) {
     this.format = format;
   }
-
+*/
   public void addData( Cell cell ) {
     try {
       // FIXME - maybe we should try to do fetch the format here, but seems to cause some issues? infinite loop? make
@@ -54,7 +55,7 @@ public abstract class TotalAggregator {
 
   protected abstract Double getValue();
 
-  public abstract TotalAggregator newInstance( Format format, Measure measure );
+  public abstract TotalAggregator newInstance(  Measure measure );
 
   public String getFormattedValue() {
     if ( formattedValue != null ) {
@@ -62,7 +63,7 @@ public abstract class TotalAggregator {
     } else {
       Double value = getValue();
       if ( value != null ) {
-        return format.format( value );
+
       }
       return "";
     }
@@ -77,7 +78,7 @@ public abstract class TotalAggregator {
   }
 
   private TotalAggregator newInstance(String formatString) {
-    return newInstance( new Format( formatString, SaikuProperties.locale ), null );
+    return null;
   }
 
   public static TotalAggregator newInstanceByFunctionName( final String functionName ) {

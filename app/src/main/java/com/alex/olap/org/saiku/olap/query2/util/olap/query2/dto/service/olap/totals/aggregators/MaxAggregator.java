@@ -1,15 +1,17 @@
 package com.alex.olap.org.saiku.olap.query2.util.olap.query2.dto.service.olap.totals.aggregators;
 
-import org.olap4j.metadata.Measure;
-import mondrian.util.Format;
+//import mondrian.util.Format;
 
-public class MaxAggregator extends TotalAggregator {
+public class MaxAggregator //extends TotalAggregator
+ {
 
+  /*
   MaxAggregator(Format format) {
     super( format );
   }
-
+*/
   private Double max = null;
+/*
 
   @Override
   public void addData( double data ) {
@@ -24,10 +26,9 @@ public class MaxAggregator extends TotalAggregator {
   public Double getValue() {
     return max;
   }
-
   @Override
   public TotalAggregator newInstance( Format format, Measure measure ) {
     return new MaxAggregator( format );
   }
-
+*/
 }

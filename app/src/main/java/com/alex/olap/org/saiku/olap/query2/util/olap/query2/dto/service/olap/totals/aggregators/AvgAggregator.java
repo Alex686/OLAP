@@ -3,14 +3,14 @@ package com.alex.olap.org.saiku.olap.query2.util.olap.query2.dto.service.olap.to
 import org.olap4j.Cell;
 import org.olap4j.OlapException;
 import org.olap4j.metadata.Datatype;
-import org.olap4j.metadata.Measure;
 import org.olap4j.metadata.Property;
 
 import java.util.Set;
 
-import mondrian.util.Format;
+//import mondrian.util.Format;
 
-public class AvgAggregator extends TotalAggregator {
+public class AvgAggregator //extends TotalAggregator
+{
   private static final Property DRILLTHROUGH_COUNT = new Property() {
 
     public String getCaption() {
@@ -46,11 +46,11 @@ public class AvgAggregator extends TotalAggregator {
     }
 
   };
-
+/*
   AvgAggregator(Format format) {
     super( format );
   }
-
+*/
   private double accumulator = 0.0;
   private long count = 0;
 
@@ -74,6 +74,7 @@ public class AvgAggregator extends TotalAggregator {
 
     }
   }
+/*
 
   @Override
   public void addData( double data ) {
@@ -89,8 +90,10 @@ public class AvgAggregator extends TotalAggregator {
   }
 
   @Override
-  public TotalAggregator newInstance( Format format, Measure measure ) {
+  public TotalAggregator newInstance( Measure measure ) {
     return new AvgAggregator( format );
-  }
 
+
+  }
+*/
 }
